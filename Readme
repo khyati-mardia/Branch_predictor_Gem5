@@ -1,0 +1,94 @@
+
+Khyati Mardia - ASU ID - 1215346587
+
+To run script : use the following command in terminal, path should be same as where the file is saved. (also change out directory path and i/p path to be changed)
+source script_3
+
+Patch is provided as - Assignmentpatch3.patch
+
+Patch is obtained as :  diff --exclude=build --exclude=.git --exclude=tests -x '*.pyc' -x parsetab.py -x sftp-config.json -uNr gem5-new/src/cpu/pred gem5/src/cpu/pred > Assignmentpatch3.patch
+
+To run patch : use command : patch -p1 < ~/Path_to_Assignmentpatch.patch
+
+Note : The fields to be read after obtaining outputs are :
+
+system.cpu.ipc                            # IPC: Instructions Per Cycle
+system.cpu.branchPred.condIncorrect       # Number of conditional branches incorrect
+system.cpu.branchPred.condPredicted       # Number of conditional branches predicted
+
+Accuracy % : (1 - (Branch predicted incorrect/Total branch predicted)) * 100
+
+Files modified/added are :
+
+1. BranchPredictor.py
+2. Sconscript
+3. gdac.cc
+4. gdac.hh
+5. gdac_counter.hh
+6. script3
+
+All program files are warning free.
+
+Steps :
+
+i) Open the terminal and go to your gem5-master folder.
+
+Command : cd gem5-master
+
+ii) Build gem5-master by following commands.
+
+scons -j4 build/X86/gem5.opt
+scons -j4 build/X86/gem5.debug
+
+iii) To run Local Branch Predictor : 
+
+./build/X86/gem5.opt --outdir=Provide_The_path_of_your_folder_where_you_want_to_save_output - eg -/home/khyati/Desktop/CA/Assignment-3/GemOutput/Local8KBP/BFS configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Local8KBP -c Provide_the_path_for_input_OPT_file - eg. -/home/khyati/gem5/benchmark/bin/BFS_opt -o Provide_the_path_for_input_OPT_file -eg. -"/home/khyati/gem5/benchmark/inputs/R10k.graph"
+
+Run below command for following combination
+
+1. For different storage sizes : 8 Kb and 32 Kb
+
+2. For different inputs : 
+
+ 2.1 BFS with input R10K.graph
+ 2.2 MST with input rand-weighted-small.graph
+ 2.3 queens with option “-c 11”
+
+
+iV) To run Tournament Branch Predictor : 
+
+./build/X86/gem5.opt --outdir=Provide_The_path_of_your_folder_where_you_want_to_save_output - eg -/home/khyati/Desktop/CA/Assignment-3/GemOutput/Tournament8KBP/BFS configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Tournament8KBP -c Provide_the_path_for_input_OPT_file - eg. -/home/khyati/gem5/benchmark/bin/BFS_opt -o Provide_the_path_for_input_OPT_file -eg. -"/home/khyati/gem5/benchmark/inputs/R10k.graph"
+
+Run below command for following combination
+
+1. For different storage sizes : 8 Kb and 32 Kb
+
+2. For different inputs : 
+
+ 2.1 BFS with input R10K.graph
+ 2.2 MST with input rand-weighted-small.graph
+ 2.3 queens with option “-c 11”
+
+
+V) To run gDAC Branch Predictor : 
+
+./build/X86/gem5.opt --outdir=Provide_The_path_of_your_folder_where_you_want_to_save_output - eg -/home/khyati/Desktop/CA/Assignment-3/GemOutput/gDAC8KBP/BFS configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=gDAC8KBP -c Provide_the_path_for_input_OPT_file - eg. -/home/khyati/gem5/benchmark/bin/BFS_opt -o Provide_the_path_for_input_OPT_file -eg. -"/home/khyati/gem5/benchmark/inputs/R10k.graph"
+
+Run below command for following combination
+
+
+1. For different storage sizes : 8 Kb and 32 Kb
+
+2. For different inputs : 
+
+ 2.1 BFS with input R10K.graph
+ 2.2 MST with input rand-weighted-small.graph
+ 2.3 queens with option “-c 11”
+
+ 
+
+
+
+
+
+

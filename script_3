@@ -1,0 +1,93 @@
+#!/bin/bash
+
+#Local BP 
+
+#I Local8KBP
+
+#1 BFS with input R10K.graph
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Local8KBP/BFS configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Local8KBP -c /home/khyati/gem5/benchmark/bin/BFS_opt -o "/home/khyati/gem5/benchmark/inputs/R10k.graph"
+
+
+#2 MST with input rand-weighted-small.graph
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Local8KBP/MST configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Local8KBP -c /home/khyati/gem5/benchmark/bin/MST_opt -o "/home/khyati/gem5/benchmark/inputs/rand-weighted-small.graph"
+
+#3 queens with option “-c 11”
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Local8KBP/queens configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Local8KBP -c /home/khyati/gem5/benchmark/bin/queens_opt -o "-c 11"
+
+
+#II Local32KBP
+
+#1 BFS with input R10K.graph
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Local32KBP/BFS configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Local32KBP -c /home/khyati/gem5/benchmark/bin/BFS_opt -o "/home/khyati/gem5/benchmark/inputs/R10k.graph"
+
+#2 MST with input rand-weighted-small.graph
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Local32KBP/MST configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Local32KBP -c /home/khyati/gem5/benchmark/bin/MST_opt -o "/home/khyati/gem5/benchmark/inputs/rand-weighted-small.graph"
+
+#3 queens with option “-c 11”
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Local32KBP/queens configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Local32KBP -c /home/khyati/gem5/benchmark/bin/queens_opt -o "-c 11"
+
+
+#Tournament BP
+
+#I Tournament8KBP
+
+#1 BFS with input R10K.graph
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Tournament8KBP/BFS configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Tournament8KBP -c /home/khyati/gem5/benchmark/bin/BFS_opt -o "/home/khyati/gem5/benchmark/inputs/R10k.graph"
+
+#2 MST with input rand-weighted-small.graph
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Tournament8KBP/MST configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Tournament8KBP -c /home/khyati/gem5/benchmark/bin/MST_opt -o "/home/khyati/gem5/benchmark/inputs/rand-weighted-small.graph"
+
+#3 queens with option “-c 11”
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Tournament8KBP/queens configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Tournament8KBP -c /home/khyati/gem5/benchmark/bin/queens_opt -o "-c 11"
+
+
+#II Tournament32KBP
+
+#1 BFS with input R10K.graph
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Tournament32KBP/BFS configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Tournament32KBP -c /home/khyati/gem5/benchmark/bin/BFS_opt -o "/home/khyati/gem5/benchmark/inputs/R10k.graph"
+
+#2 MST with input rand-weighted-small.graph
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Tournament32KBP/MST configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Tournament32KBP -c /home/khyati/gem5/benchmark/bin/MST_opt -o "/home/khyati/gem5/benchmark/inputs/rand-weighted-small.graph"
+
+#3 queens with option “-c 11”
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/Tournament32KBP/queens configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=Tournament32KBP -c /home/khyati/gem5/benchmark/bin/queens_opt -o "-c 11"
+
+
+#gDACBP
+
+#II gDAC8KBP
+
+#1 BFS with input R10K.graph
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/GDAC8KBP/BFS configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=gDAC8KBP -c /home/khyati/gem5/benchmark/bin/BFS_opt -o "/home/khyati/gem5/benchmark/inputs/R10k.graph"
+
+#2 MST with input rand-weighted-small.graph
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/GDAC8KBP/MST configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=gDAC8KBP -c /home/khyati/gem5/benchmark/bin/MST_opt -o "/home/khyati/gem5/benchmark/inputs/rand-weighted-small.graph"
+
+#3 queens with option “-c 11”
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/GDAC8KBP/queens configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=gDAC8KBP -c /home/khyati/gem5/benchmark/bin/queens_opt -o "-c 11"
+
+#III gDAC32KBP
+
+#1 BFS with input R10K.graph
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/GDAC32KBP/BFS configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=gDAC32KBP -c /home/khyati/gem5/benchmark/bin/BFS_opt -o "/home/khyati/gem5/benchmark/inputs/R10k.graph"
+
+#2 MST with input rand-weighted-small.graph
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/GDAC32KBP/MST configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=gDAC32KBP -c /home/khyati/gem5/benchmark/bin/MST_opt -o "/home/khyati/gem5/benchmark/inputs/rand-weighted-small.graph"
+
+#3 queens with option “-c 11”
+
+./build/X86/gem5.opt --outdir=/home/khyati/Desktop/CA/Assignment-3/GemOutput/GDAC32KBP/queens configs/example/se.py --cpu-type=DerivO3CPU --caches --l2cache --bp-type=gDAC32KBP -c /home/khyati/gem5/benchmark/bin/queens_opt -o "-c 11"
+
